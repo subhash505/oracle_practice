@@ -1,0 +1,9 @@
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('100', 'Shop of Epipheny', 'Augusta', 'Georgia', '220500.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('200', 'Instant Assemblers', 'Valdez', 'Alska', '37000.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('300', 'Time Manufacturer', 'Redwood City', 'California', '90500.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('400', 'Roundhouse Inc.', 'New York City', 'New York', '78150.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('500', 'Smiths & Berries', 'Portland', 'Oregon', '114600.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('600', 'Wesson LLC', 'Yuma', 'Alaska', '32000.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('700', 'ICF Foods', 'Ornaldo', 'California', '78700.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('800', 'Cheffmens Inc.', 'Toledo', 'Georgia', '187500.00');
+INSERT INTO `subhash_schema_1`.`supplier` (`SUPPLIER_ID`, `SUPPLIER_NAME`, `CITY`, `STATE`, `TOTAL_SPENT`) VALUES ('900', 'Samwoods Drinks', 'Portland', 'Georgia', '17800.00');
