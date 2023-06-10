@@ -1,0 +1,34 @@
+select * from emp where job = upper('manager')
+
+select initcap(ename)
+from emp;
+
+select ename from emp;
+
+select * from emp;
+
+select length(ename) from emp;
+
+select ename, length(ename) from emp;
+
+select ename, length(ename) from emp where length(ename) = 6;
+
+select substr('hello',2,3) from dual;
+
+select substr(ename,2,3) as substring,length(substr(ename,2,3)) as "length of name " from emp;
+
+select LPAD('day',6,'#') from dual;
+
+select RPAD('DAY',6,'%') FROM DUAL;
+
+SELECT ROUND(100.346,2) FROM DUAL;
+
+SELECT ROUND(100.0887,2) FROM DUAL;
+
+SELECT TRUNC(100.9386, 2) FROM DUAL;
+
+SELECT SYSDATE FROM DUAL;
+
+SELECT SYSTIMESTAMP FROM DUAL;
+
+SELECT ADD_MONTHS ('06/10/2023',17) FROM DUAL;
