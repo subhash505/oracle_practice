@@ -78,5 +78,158 @@ select * from (select * from emp) e full outer join (select * from dept) d on e.
 select * from (select * from emp where job = 'SALESMAN') e full outer join (select * from dept) d on e.deptno = d.deptno
 
 
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO
+
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO and emp.sal = 2450
+
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO and emp.hiredate between TO_DATE ('1981/11/06', 'yyyy/mm/dd')
+AND TO_DATE ('2014/06/24', 'yyyy/mm/dd');
+
+select * from dept;
+
+select * from emp inner join dept on emp.deptno = dept.deptno
+
+select * from emp right join dept on emp.deptno = dept.deptno
+
+select * from dept left join emp on emp.deptno = dept.deptno
+
+select * from dept left join emp on emp.deptno = dept. deptno
+
+select * from emp , dept where emp.deptno = dept.deptno order by job desc
+
+select emp.job, emp.ename, dept.loc,emp.empno from emp inner join dept on emp.deptno = dept.deptno group by emp.empno
+
+select * from emp,dept where emp.deptno(+) = dept.deptno
+
+select * from emp full outer join dept on emp.deptno = dept.deptno
+
+select * from (select * from emp) e full outer join dept on e.deptno = dept.deptno
+
+select * from (select * from emp) e full outer join (select * from dept) d on e.deptno = d.deptno
+
+select * from (select * from emp where job = 'SALESMAN') e full outer join (select * from dept) d on e.deptno = d.deptno
+
+select * from emp;
+
+select * from (select * from emp where job = 'SALESMAN') e left outer join (select * from dept) d on e.deptno = d.deptno
+
+select * from (select * from dept) d  right outer join (select * from emp where job = 'SALESMAN') e on e.deptno = d.deptno 
+
+select count(*) from (select * from (select * from dept) d  left outer join (select * from emp where job = 'SALESMAN') e on e.deptno = d.deptno )
+
+select * from (select * from (select * from (select * from dept) d  left outer join (select * from emp where job = 'SALESMAN') e on e.deptno = d.deptno ))
+
+select e.*, d.* from emp e, dept d where e.deptno =d.deptno
+
+select * from emp where exists (select 'random' from dual)
+
+select * from emp where not exists (select 'random' from dual)
+
+select * from emp where exists ( select * from emp where job = 'PROGRAMMER')
+
+select * from emp where NOT exists ( select * from emp where job = 'PROGRAMMER')
+
+SELECT * FROM DEPT
+
+SELECT * FROM DEPT D WHERE EXISTS (SELECT * FROM EMP E WHERE D.DEPTNO = E.DEPTNO)
+
+SELECT D.* FROM DEPT D WHERE NOT EXISTS (SELECT * FROM EMP E WHERE D.DEPTNO = E.DEPTNO) OR LOC = 'CHICAGO'
+
+SELECT * FROM EMP;
+
+SELECT E.ENAME EMPLOYEE, M.ENAME MANAGER FROM EMP E LEFT JOIN EMP M
+ON E.MGR = M.EMPNO
+
+SELECT * FROM EMP;
+
+SELECT * FROM EMP CROSS JOIN DEPT
+ON EMP.DEPTNO = DPET.DEPTNO;
+
+SELECT ENAME, MGR,LOC FROM EMP, DEPT;
+
+SELECT ENAME, MGR,LOC FROM EMP NATURAL JOIN  DEPT;
+
+select ename, mgr, loc from emp join dept using(deptno)
+
+create table job_grade 
+( grade_level varchar(2) not null,
+lower_sal number not null,
+highest_sal number not null);
+
+insert all
+  into job_grade
+  value('A', 0,1000)
+  into job_grade
+  value('B', 1001,2000)
+  into job_grade
+  value('C', 1002,3000)
+  into job_grade
+  value('D', 1003,4000)
+  into job_grade
+  value('D', 1004,5000);
+SELECT * FROM DUAL;
+INSERT ALL
+    INTO job_grade
+    VALUES ('A', 0, 1000)
+    INTO job_grade
+    VALUES ('B', 1001, 2000)
+    INTO job_grade
+    VALUES ('C', 2001, 3000)
+    INTO job_grade
+    VALUES ('D', 3001, 4000)
+    INTO job_grade
+    VALUES ('E', 4001, 5000)
+SELECT * FROM DUAL;
+
+SELECT * FROM EMP;
+
+SELECT ENAME, JOB, (CASE  JOB
+    WHEN 'PRESIDENT' THEN 'BIG SHOT'
+    WHEN 'MANAGER' THEN 'DECIDES THE PAY'
+    WHEN 'ANALYST' THEN 'RISK ASSEMENT'
+    WHEN 'CLERK' THEN 'MAKES YOUR SALARY'
+    WHEN 'SALESMAN' THEN 'SELL YOUR PRODUCT'
+    ELSE 'NO COMMENT'
+    end) AS "COMMENT"
+FROM EMP;
+
+
+SELECT ENAME, JOB, 
+    (CASE JOB
+        WHEN 'PRESIDENT' THEN 'BIG SHOT'
+        WHEN 'MANAGER' THEN 'DECIDES THE PAY'
+        WHEN 'ANALYST' THEN 'RISK ASSESSMENT'
+        WHEN 'CLERK' THEN 'MAKES YOUR SALARY'
+        WHEN 'SALESMAN' THEN 'SELL YOUR PRODUCT'
+        ELSE 'NO COMMENT'
+    END) AS COMMENT
+FROM EMP;
+
+SELECT ENAME, JOB, 
+    (CASE JOB
+        WHEN 'PRESIDENT' THEN 'BIG SHOT'
+        WHEN 'MANAGER' THEN 'DECIDES THE PAY'
+        WHEN 'ANALYST' THEN 'RISK ASSESSMENT'
+        WHEN 'CLERK' THEN 'MAKES YOUR SALARY'
+        WHEN 'SALESMAN' THEN 'SELL YOUR PRODUCT'
+        ELSE 'NO COMMENT'
+    END) AS COMMENT
+FROM EMP;
+
+SELECT DISTINCT(JOB) FROM EMP;
+select * from emp;
+
+select ename, sal, (case sal
+when sal > 3000 then 'big shot'
+else 'salary is good'
+end ) as "salary comment"
+from emp;
+
+SELECT ename, sal, CASE
+ WHEN sal >= 3000 THEN 'big shot'
+ WHEN sal < 3000 THEN 'need more money'
+ END as salary_comment
+FROM emp;
+
 
 
