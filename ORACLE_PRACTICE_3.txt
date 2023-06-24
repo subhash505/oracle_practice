@@ -1,0 +1,82 @@
+select * from emp;
+select avg(sal), job from emp group by(job)
+
+select job, count(*) from emp group by job , deptno
+
+select job, deptno, count(*) from emp group by job, deptno
+
+select * from emp where deptno = 30
+
+select * from emp where deptno = ( select deptno from dept where deptno = 30) 
+
+select * from dept where deptno <(select deptno from dept where deptno =30) and dname = 'ACCOUNTING'
+
+select * from (select * from emp)
+
+select * from emp where deptno = (select deptno FROM DEPT WHERE LOC = 'CHICAGO')
+
+SELECT * FROM DEPT
+
+select * from emp where deptno in ( select deptno from dept where deptno in (10,20,30))
+
+select * from (select * from emp)
+
+select job, ename ,(select deptno from emp ) from emp
+
+select job , ename , (select JOB from emp where ename = 'KING') FROM EMP;_
+
+select job , ename , (select 'HELLO' from DUAL) FROM EMP;
+
+select job , ename , (select 'HELLO' from DUAL) FROM EMP WHERE JOB = ( SELECT JOB FROM EMP WHERE JOB = 'PRESIDENT')
+
+SELECT * FROM EMP WHERE DEPTNO = ( SELECT DEPTNO FROM DEPT WHERE LOC = 'CHICAGO')
+
+SELECT * FROM DEPT;
+
+SELECT * FROM EMP;
+
+SELECT * FROM DEPT, EMP WHERE EMP.DEPTNO = DEPT.DEPTNO AND DEPT.LOC = 'DALLAS'
+ORDER BY EMP.JOB DESC;
+
+SELECT E.JOB, E.SAL, E.ENAME FROM EMP E, DEPT D WHERE E.DEPTNO = D.DEPTNO AND D.LOC = 'DALLAS' ORDER BY E.JOB DESC;
+
+SELECT E.JOB, E.SAL, E.ENAME FROM (SELECT * FROM EMP) E, DEPT D WHERE E.DEPTNO = D.DEPTNO AND D.LOC = 'DALLAS' ORDER BY E.JOB DESC;
+
+SELECT e.ename as first_name, e.job,e.sal,e.deptno
+from (select * from emp where job in ('MANAGER', 'CLERK')) E, (select * from dept WHERE LOC = 'DALLAS') d
+where e.deptno = d.deptno 
+
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO
+
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO and emp.sal = 2450
+
+SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO and emp.hiredate between TO_DATE ('1981/11/06', 'yyyy/mm/dd')
+AND TO_DATE ('2014/06/24', 'yyyy/mm/dd');
+
+select * from dept;
+
+select * from emp inner join dept on emp.deptno = dept.deptno
+
+select * from emp right join dept on emp.deptno = dept.deptno
+
+select * from dept left join emp on emp.deptno = dept.deptno
+
+select * from dept left join emp on emp.deptno = dept. deptno
+
+select * from emp , dept where emp.deptno = dept.deptno order by job desc
+
+select emp.job, emp.ename, dept.loc,emp.empno from emp inner join dept on emp.deptno = dept.deptno group by emp.empno
+
+select * from emp,dept where emp.deptno(+) = dept.deptno
+
+select * from emp full outer join dept on emp.deptno = dept.deptno
+
+select * from (select * from emp) e full outer join dept on e.deptno = dept.deptno
+
+select * from (select * from emp) e full outer join (select * from dept) d on e.deptno = d.deptno
+
+select * from (select * from emp where job = 'SALESMAN') e full outer join (select * from dept) d on e.deptno = d.deptno
+
+
+
+
