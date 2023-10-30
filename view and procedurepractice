@@ -1,0 +1,15 @@
+select * from subhash_table;
+
+CREATE VIEW Brazil_Customers AS
+SELECT STORE_ID, CITY_NAME
+FROM subhash_table
+WHERE STORE_ID = '1';
+
+SELECT * FROM Brazil_Customers;
+
+CREATE PROCEDURE Select_subhash_table
+AS
+SELECT * FROM subhash_table
+GO;
+
+EXEC Select_subhash_table;
