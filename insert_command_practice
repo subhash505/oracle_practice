@@ -1,0 +1,9 @@
+select * from subhash_table order by store_id;
+
+insert into subhash_table(store_id,city_name) values(2,'New Delhi')
+
+insert into subhash_table(store_id,city_name) values(3,'chandigarh')
+
+insert into subhash_table(store_id,city_name) values(4,'faridabad')
+
+commit;
