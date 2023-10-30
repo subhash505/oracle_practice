@@ -34,3 +34,4 @@ insert all
      into table_2 (product_id,name,product_cost,product_retail,product_type,store_id) values(4,'subhash sharma','400.20',805.05,'office_use',08)
   select * from dual;
 
+
