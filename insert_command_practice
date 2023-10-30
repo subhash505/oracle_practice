@@ -7,3 +7,30 @@ insert into subhash_table(store_id,city_name) values(3,'chandigarh')
 insert into subhash_table(store_id,city_name) values(4,'faridabad')
 
 commit;
+---
+insert ALL
+into subhash_table(store_id,city_name) values(5,'Panipat')
+into subhash_table(store_id,city_name) values(6,'Ranchi')
+into subhash_table(store_id,city_name) values(7,'sonipat')
+select * from dual;
+--- this much you have to execute.
+
+---
+create table table_5
+(
+    product_id number not null,
+    name varchar(50),
+    product_cost number(5,2),
+    product_retail number(5,2),
+    product_type varchar(10),
+    store_id number not null,
+    constraint product_pk primary key(product_id,store_id)
+)
+--- with primary key constrainst where priamry key is combination of two column
+
+insert all
+     into table_2 (product_id,name,product_cost,product_retail,product_type,store_id) values(2,'subhash sharma','200.20',605.05,'daily_use',06)
+     into table_2 (product_id,name,product_cost,product_retail,product_type,store_id) values(3,'subhash sharma','300.20',705.05,'personal_',07)
+     into table_2 (product_id,name,product_cost,product_retail,product_type,store_id) values(4,'subhash sharma','400.20',805.05,'office_use',08)
+  select * from dual;
+
