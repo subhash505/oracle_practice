@@ -15,3 +15,19 @@ select * from all_objects
 where owner = 'WKSP_SUBHASH505'
 and object_type = 'VIEW'
 
+select * from emp 
+inner join 
+    (select empno, max(SAL)
+    from emp
+    group by empno) e2
+on emp.empno = e2.empno
+
+select * from emp 
+inner join 
+    (select empno, max(SAL) sal
+    from emp
+    group by empno) e2
+on emp.empno = e2.empno
+and emp.sal = e2.sal
+where ename != 'FORD'
+
