@@ -1,0 +1,17 @@
+create view manager_v
+as select * from emp
+where job = 'MANAGER'
+
+select * from manager_v;
+
+select * from user_objects
+where object_type = 'VIEW'
+
+select * from all_objects
+where owner = 'WKSP_SUBHASH505'
+and object_type = 'TABLE'
+
+select * from all_objects
+where owner = 'WKSP_SUBHASH505'
+and object_type = 'VIEW'
+
