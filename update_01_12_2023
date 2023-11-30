@@ -1,0 +1,6 @@
+select * from subhash_table
+fetch first 5 rows only
+
+select * from subhash_table
+offset 3 rows
+fetch next 3 row only
