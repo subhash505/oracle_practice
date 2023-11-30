@@ -31,3 +31,27 @@ on emp.empno = e2.empno
 and emp.sal = e2.sal
 where ename != 'FORD'
 
+
+create view super_sal_v as
+select e1.* from emp e1
+inner join 
+    (select empno, max(SAL) sal
+    from emp
+    group by empno) e2
+on e1.empno = e2.empno
+and e1.sal = e2.sal
+where e1.ename != 'FORD'
+
+select * from super_sal_v
+union 
+select * from emp
+
+select * from super_sal_v
+union all
+select * from emp
+
+select * from super_sal_v
+minus 
+select * from emp where job = 'MANAGER'
+
+
