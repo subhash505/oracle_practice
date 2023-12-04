@@ -68,3 +68,49 @@ END;
 select * from supplier;
 select* from products;
 
+
+https://www.techonthenet.com/oracle/foreign_keys/foreign_delete.php
+
+
+---- to perform the operation on cascade delete then you need to do 
+---- add ON CASCADE DELTE on the primary key and foreign key costraint where you have created in the table creation operation like this 
+
+drop table supplier;
+drop table products;
+
+
+CREATE TABLE supplier
+( supplier_id numeric(10) not null,
+  supplier_name varchar2(50) not null,
+  contact_name varchar2(50),
+  CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
+  
+);
+
+CREATE TABLE products
+( product_id numeric(10) not null,
+  supplier_id numeric(10) not null,
+  CONSTRAINT fk_supplier
+    FOREIGN KEY (supplier_id)
+    REFERENCES supplier(supplier_id)
+    ON DELETE CASCADE
+);
+
+BEGIN
+
+INSERT INTO supplier values(10, '1st Supplier', 'John Dollan');
+INSERT INTO supplier values(20, '2nd Supplier', 'Steve Reeves');
+INSERT INTO supplier values(30, '3rd Supplier', 'Peter Marcello');
+
+INSERT INTO products values(1, 10);
+INSERT INTO products values(2, 10);
+INSERT INTO products values(3, 10);
+INSERT INTO products values(4, 20);
+INSERT INTO products values(5, 20);
+INSERT INTO products values(6, 30);
+
+END;
+/
+
+delete from supplier where supplier_id =10 
+
